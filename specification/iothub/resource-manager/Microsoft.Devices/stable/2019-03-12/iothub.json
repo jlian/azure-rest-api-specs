@@ -1920,7 +1920,7 @@
           "readOnly": true
         },
         "eventHubEndpoints": {
-          "description": "The Event Hub-compatible endpoint properties. The possible keys to this dictionary are events and operationsMonitoringEvents. Both of these keys have to be present in the dictionary while making create or update calls for the IoT hub.",
+          "description": "The Event Hub-compatible endpoint properties. The only possible keys to this dictionary is events. This key has to be present in the dictionary while making create or update calls for the IoT hub.",
           "type": "object",
           "additionalProperties": {
             "$ref": "#/definitions/EventHubProperties"
@@ -1953,9 +1953,6 @@
         "comments": {
           "description": "IoT hub comments.",
           "type": "string"
-        },
-        "operationsMonitoringProperties": {
-          "$ref": "#/definitions/OperationsMonitoringProperties"
         },
         "features": {
           "description": "The capabilities and features enabled for the IoT hub.",
@@ -2117,29 +2114,6 @@
         }
       }
     },
-    "OperationsMonitoringProperties": {
-      "description": "The operations monitoring properties for the IoT hub. The possible keys to the dictionary are Connections, DeviceTelemetry, C2DCommands, DeviceIdentityOperations, FileUploadOperations, Routes, D2CTwinOperations, C2DTwinOperations, TwinQueries, JobsOperations, DirectMethods.",
-      "type": "object",
-      "properties": {
-        "events": {
-          "type": "object",
-          "additionalProperties": {
-            "enum": [
-              "None",
-              "Error",
-              "Information",
-              "Error, Information"
-            ],
-            "description": "The operations monitoring level.",
-            "type": "string",
-            "x-ms-enum": {
-              "name": "OperationMonitoringLevel",
-              "modelAsString": true
-            }
-          }
-        }
-      }
-    },
     "IpFilterRule": {
       "description": "The IP filter rules for the IoT hub.",
       "type": "object",
@@ -2257,7 +2231,7 @@
           "type": "string"
         },
         "name": {
-          "description": "The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, operationsMonitoringEvents, fileNotifications, $default. Endpoint names must be unique across endpoint types. The name need not be the same as the actual queue name.",
+          "description": "The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types. The name need not be the same as the actual queue name.",
           "type": "string",
           "pattern": "^[A-Za-z0-9-._]{1,64}$"
         },
@@ -2284,7 +2258,7 @@
           "type": "string"
         },
         "name": {
-          "description": "The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, operationsMonitoringEvents, fileNotifications, $default. Endpoint names must be unique across endpoint types.  The name need not be the same as the actual topic name.",
+          "description": "The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types.  The name need not be the same as the actual topic name.",
           "type": "string",
           "pattern": "^[A-Za-z0-9-._]{1,64}$"
         },
@@ -2311,7 +2285,7 @@
           "type": "string"
         },
         "name": {
-          "description": "The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, operationsMonitoringEvents, fileNotifications, $default. Endpoint names must be unique across endpoint types.",
+          "description": "The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types.",
           "type": "string",
           "pattern": "^[A-Za-z0-9-._]{1,64}$"
         },
@@ -2338,7 +2312,7 @@
           "type": "string"
         },
         "name": {
-          "description": "The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, operationsMonitoringEvents, fileNotifications, $default. Endpoint names must be unique across endpoint types.",
+          "description": "The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types.",
           "type": "string",
           "pattern": "^[A-Za-z0-9-._]{1,64}$"
         },
